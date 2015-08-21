@@ -7,11 +7,11 @@ router.get('/', function (req, res) {
   res.render('buzzclicker');
 })
 
-router.post('/tick', function (req, res) {
+router.get('/tick', function (req, res) {
   if(drunkity !== 0) {
     drunkty -= .5;
   }
-  res.json(drunkity);
+  res.json({ drunkity : drunkity });
 });
 
 module.exports = router;
