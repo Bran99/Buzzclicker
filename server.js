@@ -29,7 +29,7 @@ app.use(session({
 app.use(bodyParser.json());
 app.use(methodOverride('_method'));
 
-var usersController = require('./controllers/buzzclickers.js');
+var buzzclickersController = require('./controllers/buzzclickers.js');
 app.use('/', buzzclickersController)
 
 mongoose.connect(MONGOURI);
