@@ -1,0 +1,31 @@
+{
+  "name": "buzzclicker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bran99/Buzzclicker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bran99/Buzzclicker/issues"
+  },
+  "homepage": "https://github.com/Bran99/Buzzclicker#readme",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "dotenv": "^1.2.0",
+    "ejs": "^2.3.3",
+    "express": "^4.13.3",
+    "express-ejs-layouts": "^1.1.0",
+    "express-session": "^1.11.3",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.1.3",
+    "morgan": "^1.6.1"
+  }
+}
