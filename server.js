@@ -11,7 +11,7 @@ var express = require('express'),
     session = require('express-session');
 
 var PORT = process.env.PORT || 3000;
-var MONGOURI = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/whale-drop';
+var MONGOURI = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/buzzclicker';
 
 app.set('views', './views');
 app.set('view engine', 'ejs');
@@ -29,8 +29,8 @@ app.use(session({
 app.use(bodyParser.json());
 app.use(methodOverride('_method'));
 
-var usersController = require('./controllers/users.js');
-app.use('/', usersController)
+var usersController = require('./controllers/buzzclickers.js');
+app.use('/', buzzclickersController)
 
 mongoose.connect(MONGOURI);
 var db = mongoose.connection;
