@@ -1,0 +1,25 @@
+/* CSS */
+.reset-space{
+	margin: 0;
+	padding: 0;	
+}
+.bg-color{
+	background-color: #669999;
+}
+.top-ui{
+	height: 100px;
+	background-color: #ffcc66;
+	box-shadow: 5px 5px 5px #cc6633;
+	margin: 8px;
+}
+.bot-ui{
+	height: 800px;
+	background-color: #ff9933;
+	box-shadow: 5px 5px 5px #cc6633;
+	margin: 8px;	
+}
+.title-banner{
+}
+h1{
+	color: red;
+}
