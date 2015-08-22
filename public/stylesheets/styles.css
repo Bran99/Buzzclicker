@@ -25,3 +25,44 @@
 	height: 50px;
 	margin-left: 5px;
 }
+
+#arm {
+  -webkit-animation: .1s ease-in-out;
+	transform-origin: 90% 40%;
+}
+
+@-webkit-keyframes moveArm {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(140deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+@-moz-keyframes moveArm {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+@-moz-keyframes armReset {
+  0%, 100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes playPausePulseReset {
+  0%, 100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
