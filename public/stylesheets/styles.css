@@ -1,8 +1,4 @@
 /* CSS */
-.reset-space{
-	margin: 0;
-	padding: 0;
-}
 .bg-color{
 	background-color: #669999;
 }
@@ -23,18 +19,51 @@
 	box-shadow: 5px 5px 5px #cc6633;
 	margin: 8px;
 }
+#counter {
+	height: 50px;
+	background: grey;
+}
+.counterText {
+	margin: 0;
+	padding: 0;
+	font-size:20px;
+	width:20%;
+}
+.reset-space{
+	margin: 0;
+	padding: 0;
+	font-size:20px;
+}
+
+.meter-placement{
+	display: flex;
+	font-size: 10px;
+}
+
+#barHolder {
+	font-size:20px;
+	height: 50px;
+	width: 80%;
+	padding-right: 10px;
+
+}
+
+#counterHolder{
+	padding-left: 10px;
+	padding-right: 10px;
+}
 #bar{
 	width: 0%;
+	height: 50px;
 	background-color: red;
 	height: 50px;
-	margin-left: 5px;
 	transition: width 0.2s ease;
 	border-radius: 2px;
 }
-
 #carl:hover {
 	cursor: pointer;
 }
+
 .upgrade-frame{
 	display: none;
 	padding: 5px;
