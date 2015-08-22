@@ -29,18 +29,11 @@ router.post('/tick', function (req, res) {
 router.post('/drink', function (req, res) {
   level = req.body.level;
 
+
   if (level === 0) {
     drunkity += 0.15;
-  } else if (level === 1) {
-    drunkity += 0.30;
-  } else if (level === 2) {
-    drunkity += 0.45;
-  } else if (level === 3) {
-    drunkity += 0.6;
-  } else if (level === 4) {
-    drunkity += 0.75;
-  } else if (level === 5) {
-    drunkity += 0.9;
+  } else {
+    drunkity += level * .25
   }
 
   if (drunkity > 100) {
