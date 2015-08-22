@@ -11,24 +11,6 @@
       <div class="bot-ui">
 
         <!-- beer buttons buff lite -->
-        <!-- <div class="upgrade-frame original" ng-hide="true">
-          <div class="upgrade-button">
-            <div class="row reset-space">
-              <div class="col-xs-7 reset-space">
-                <h3 class="button-text">
-                  Buff lite
-                </h3>
-              </div>
-              <div class="col-xs-2 reset-space">
-                <div class="beer-icon">
-                  <img class="beer-img" src="/assets/buff_lite.png">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- beer buttons buff lite -->
         <div class="upgrade-frame upgrade-1" ng-hide="bc.level > 0">
           <div class="upgrade-button">
             <div class="row reset-space">
@@ -157,6 +139,54 @@
             </div>
           </div>
         </div>
+
+        <!-- upgrade belly button -->
+       <div class="upgrade-frame upgrade-belly-1" ng-hide="bc.level > 0">
+         <div class="upgrade-button">
+           <div class="row reset-space">
+             <div class="col-xs-7 reset-space">
+               <h3 class="button-text">
+                 Upgrade Belly!
+               </h3>
+             </div>
+             <div class="col-xs-2 reset-space">
+             </div>
+             <div class="col-xs-3 beer-hit-button reset-space">
+
+                 <button class="btn btn-warning"
+                 ng-click="bc.increaseBelly()"
+                 ng-hide="bc.beers < 5">
+
+                   Upgrade
+                 </button>
+             </div>
+           </div>
+         </div>
+       </div>
+
+       <!-- upgrade belly button -->
+      <div class="upgrade-frame upgrade-belly-2" ng-hide="bc.level > 1">
+        <div class="upgrade-button">
+          <div class="row reset-space">
+            <div class="col-xs-7 reset-space">
+              <h3 class="button-text">
+                Upgrade Belly!
+              </h3>
+            </div>
+            <div class="col-xs-2 reset-space">
+            </div>
+            <div class="col-xs-3 beer-hit-button reset-space">
+
+                <button class="btn btn-warning"
+                ng-click="bc.increaseBelly()"
+                ng-hide="bc.beers < 10">
+
+                  Upgrade
+                </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       </div>
 
