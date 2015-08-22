@@ -1,11 +1,11 @@
 var app = angular.module('buzzClicker',[]);
 
 app.controller('buzzClickerController', ["$http", "$scope", function($http, $scope){
-  this.barWidth = 0;
   this.upgrades = 0;
   this.level    = 0;
   this.beers    = 0;
   this.beerType;
+  this.barWidth;
 
   var controller = this;
 
