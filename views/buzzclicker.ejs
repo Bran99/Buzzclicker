@@ -11,7 +11,7 @@
       <div class="bot-ui">
 
         <!-- beer buttons buff lite -->
-        <div class="upgrade-frame original">
+        <!-- <div class="upgrade-frame original" ng-hide="true">
           <div class="upgrade-button">
             <div class="row reset-space">
               <div class="col-xs-7 reset-space">
@@ -26,14 +26,15 @@
               </div>
             </div>
           </div>
-        </div>
-        <!-- beer buttons buff -->
-        <div class="upgrade-frame upgrade-1">
+        </div> -->
+
+        <!-- beer buttons buff lite -->
+        <div class="upgrade-frame upgrade-1" ng-hide="bc.level > 0">
           <div class="upgrade-button">
             <div class="row reset-space">
               <div class="col-xs-7 reset-space">
                 <h3 class="button-text">
-                  Buff
+                  Buff Lite
                 </h3>
               </div>
               <div class="col-xs-2 reset-space">
@@ -43,7 +44,9 @@
               </div>
               <div class="col-xs-3 beer-hit-button reset-space">
 
-                  <button class="btn btn-warning" ng-click="bc.level = 1" ng-hide="bc.level >= 1">
+                  <button class="btn btn-warning"
+                          ng-click="bc.levelup()"
+                          ng-hide="bc.beers < 5 || bc.level >= 1">
 
                     Upgrade
                   </button>
@@ -52,7 +55,7 @@
           </div>
         </div>
         <!-- beer buttons buff Extra -->
-        <div class="upgrade-frame upgrade-2">
+        <div class="upgrade-frame upgrade-2" ng-hide="bc.level > 1">
           <div class="upgrade-button">
             <div class="row reset-space">
               <div class="col-xs-7 reset-space">
@@ -67,7 +70,9 @@
               </div>
               <div class="col-xs-3 beer-hit-button reset-space">
 
-                  <button class="btn btn-warning" ng-click="bc.level = 2" ng-hide="bc.level >= 2">
+                  <button class="btn btn-warning"
+                  ng-click="bc.levelup()"
+                  ng-hide="bc.beers < 10 || bc.level >= 2">
 
                     Upgrade
                   </button>
@@ -76,7 +81,7 @@
           </div>
         </div>
            <!-- beer buttons Buff Heavy -->
-        <div class="upgrade-frame upgrade-3">
+        <div class="upgrade-frame upgrade-3" ng-hide="bc.level > 2">
           <div class="upgrade-button">
             <div class="row reset-space">
               <div class="col-xs-7 reset-space">
@@ -91,7 +96,9 @@
               </div>
               <div class="col-xs-3 beer-hit-button reset-space">
 
-                  <button class="btn btn-warning" ng-click="bc.level = 3" ng-hide="bc.level >= 3">
+                  <button class="btn btn-warning"
+                  ng-click="bc.levelup()"
+                  ng-hide="bc.beers < 15 || bc.level >= 3">
 
                     Upgrade
                   </button>
@@ -100,7 +107,7 @@
           </div>
         </div>
            <!-- beer buttons Buff Diesel -->
-        <div class="upgrade-frame upgrade-4">
+        <div class="upgrade-frame upgrade-4" ng-hide="bc.level > 3">
           <div class="upgrade-button">
             <div class="row reset-space">
               <div class="col-xs-7 reset-space">
@@ -115,7 +122,9 @@
               </div>
               <div class="col-xs-3 beer-hit-button reset-space">
 
-                  <button class="btn btn-warning" ng-click="bc.level = 4" ng-hide="bc.level >= 4">
+                  <button class="btn btn-warning"
+                  ng-click="bc.levelup()"
+                  ng-hide="bc.beers < 20 || bc.level >= 4">
                     Upgrade
                   </button>
               </div>
@@ -123,7 +132,7 @@
           </div>
         </div>
            <!-- beer buttons Buff HOLY SHIT -->
-        <div class="upgrade-frame upgrade-5">
+        <div class="upgrade-frame upgrade-5" ng-hide="bc.level > 4">
           <div class="upgrade-button">
             <div class="row reset-space">
               <div class="col-xs-7 reset-space">
@@ -138,7 +147,9 @@
               </div>
               <div class="col-xs-3 beer-hit-button reset-space">
 
-                  <button class="btn btn-warning" ng-click="bc.level = 5" ng-hide="bc.level >= 5">
+                  <button class="btn btn-warning"
+                  ng-click="bc.levelup()"
+                  ng-hide="bc.beers < 25 || bc.level >= 5">
 
                     Upgrade
                   </button>
