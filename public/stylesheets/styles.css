@@ -21,7 +21,9 @@
 }
 #counter {
 	height: 50px;
-	background: grey;
+	font-size: 40px;
+	text-align: center;
+	line-height: 1.4em
 }
 .counterText {
 	margin: 0;
@@ -45,7 +47,6 @@
 	height: 50px;
 	width: 80%;
 	padding-right: 10px;
-
 }
 
 #counterHolder{
