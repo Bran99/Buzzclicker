@@ -2,7 +2,8 @@ var app = angular.module('buzzClicker',[]);
 
 app.controller('buzzClickerController', ["$http", "$scope", function($http, $scope){
   this.barWidth = 0;
-  this.level = 4;
+  this.level    = 0;
+  this.beerType;
 
   var controller = this;
 
@@ -14,18 +15,20 @@ app.controller('buzzClickerController', ["$http", "$scope", function($http, $sco
          .success(function (data) {
            controller.barWidth = data.drunkity + '%';
            console.log(data);
+           console.log(controller.level);
          })
   }, 1000);
 
   ///////////////////////////////////////////
   // TICK DRUNK METER UP WHEN BEER CLICKED //
   ///////////////////////////////////////////
-  this.drink = function(level) {
+  this.drink = function () {
     // $('.arm').toggleClass('')
-    $http.post('/drink', { level : level })
+    $http.post('/drink', { level : controller.level })
          .success(function (data) {
            controller.barWidth = data.drunkity + '%';
            console.log(data);
          })
   }
+
 }]);
