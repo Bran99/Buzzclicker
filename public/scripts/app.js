@@ -2,7 +2,7 @@ var app = angular.module('buzzClicker',[]);
 
 app.controller('buzzClickerController', ["$http", "$scope", function($http, $scope){
   this.barWidth = 0;
-  this.level = 0;
+  this.level = 4;
 
   var controller = this;
 
