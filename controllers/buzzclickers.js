@@ -13,7 +13,7 @@ router.get('/', function (req, res) {
 ///////////////////////////////////////////
 router.post('/tick', function (req, res) {
   if (drunkity > 0) {
-    drunkity -= .75;
+    drunkity -= (req.body.level + 1) * .75;
   }
 
   if (drunkity < 0) {
