@@ -7,7 +7,7 @@ router.get('/', function (req, res) {
   res.render('buzzclicker');
 })
 
-router.get('/tick', function (req, res) {
+router.post('/tick', function (req, res) {
   if(drunkity !== 0) {
     drunkty -= .5;
   }
