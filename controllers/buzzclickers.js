@@ -9,7 +9,7 @@ router.get('/', function (req, res) {
 })
 
 ///////////////////////////////////////////
-// TICK DRUNK METER DOWN EVERY 2 SECONDS //
+//// TICK DRUNK METER DOWN EVERY SECOND ///
 ///////////////////////////////////////////
 router.post('/tick', function (req, res) {
   if (drunkity > 0) {
