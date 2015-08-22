@@ -42,7 +42,7 @@
                 </div>
               </div>
               <div class="col-xs-3 beer-hit-button reset-space">
-                  <button type="button" class="btn btn-warning" ng-submit="bc.level += 1">
+                  <button class="btn btn-warning" ng-click="bc.level = 1" ng-hide="bc.level >= 1">
                     Upgrade
                   </button>
               </div>
@@ -64,7 +64,7 @@
                 </div>
               </div>
               <div class="col-xs-3 beer-hit-button reset-space">
-                  <button type="button" class="btn btn-warning">
+                  <button class="btn btn-warning" ng-click="bc.level = 2" ng-hide="bc.level >= 2">
                     Upgrade
                   </button>
               </div>
@@ -86,7 +86,7 @@
                 </div>
               </div>
               <div class="col-xs-3 beer-hit-button reset-space">
-                  <button type="button" class="btn btn-warning">
+                  <button class="btn btn-warning" ng-click="bc.level = 3" ng-hide="bc.level >= 3">
                     Upgrade
                   </button>
               </div>
@@ -108,7 +108,7 @@
                 </div>
               </div>
               <div class="col-xs-3 beer-hit-button reset-space">
-                  <button type="button" class="btn btn-warning">
+                  <button class="btn btn-warning" ng-click="bc.level = 4" ng-hide="bc.level >= 4">
                     Upgrade
                   </button>
               </div>
@@ -130,7 +130,7 @@
                 </div>
               </div>
               <div class="col-xs-3 beer-hit-button reset-space">
-                  <button type="button" class="btn btn-warning">
+                  <button class="btn btn-warning" ng-click="bc.level = 5" ng-hide="bc.level >= 5">
                     Upgrade
                   </button>
               </div>
