@@ -32,8 +32,10 @@ app.controller('buzzClickerController', ["$http", "$scope", function($http, $sco
          .success(function (data) {
            controller.barWidth = data.drunkity + '%';
            controller.upgrades = data.drunkity;
+           document.getElementById("blur").setAttribute("stdDeviation", data.drunkity/30);
          });
   };
+
 
   ///////////////////////////////////////////
   ///// UPGRADE EFFECTIVENESS OF CLICKS /////
