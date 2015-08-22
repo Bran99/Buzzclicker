@@ -140,6 +140,54 @@
           </div>
         </div>
 
+        <!-- upgrade belly button -->
+       <div class="upgrade-frame upgrade-belly-1" ng-hide="bc.level > 0">
+         <div class="upgrade-button">
+           <div class="row reset-space">
+             <div class="col-xs-7 reset-space">
+               <h3 class="button-text">
+                 Upgrade Belly!
+               </h3>
+             </div>
+             <div class="col-xs-2 reset-space">
+             </div>
+             <div class="col-xs-3 beer-hit-button reset-space">
+
+                 <button class="btn btn-warning"
+                 ng-click="bc.increaseBelly()"
+                 ng-hide="bc.beers < 5">
+
+                   Upgrade
+                 </button>
+             </div>
+           </div>
+         </div>
+       </div>
+
+       <!-- upgrade belly button -->
+      <div class="upgrade-frame upgrade-belly-2" ng-hide="bc.level > 1">
+        <div class="upgrade-button">
+          <div class="row reset-space">
+            <div class="col-xs-7 reset-space">
+              <h3 class="button-text">
+                Upgrade Belly!
+              </h3>
+            </div>
+            <div class="col-xs-2 reset-space">
+            </div>
+            <div class="col-xs-3 beer-hit-button reset-space">
+
+                <button class="btn btn-warning"
+                ng-click="bc.increaseBelly()"
+                ng-hide="bc.beers < 10">
+
+                  Upgrade
+                </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       </div>
 
     </div>
