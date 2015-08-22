@@ -21,6 +21,7 @@ app.controller('buzzClickerController', ["$http", "$scope", function($http, $sco
   // TICK DRUNK METER UP WHEN BEER CLICKED //
   ///////////////////////////////////////////
   this.drink = function(level) {
+    $('.arm').toggleClass('')
     $http.post('/drink', { level : level })
          .success(function (data) {
            console.log(data);
