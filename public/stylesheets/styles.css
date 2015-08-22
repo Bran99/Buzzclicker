@@ -36,7 +36,12 @@
 	cursor: pointer;
 }
 .upgrade-frame{
+	display: none;
 	padding: 5px;
+}
+
+.original{
+	display: block;
 }
 .upgrade-button{
 	background-color: white;
