@@ -34,11 +34,13 @@ router.post('/drink', function (req, res) {
   } else if (level === 1) {
     drunkity += 0.30;
   } else if (level === 2) {
-    drunkity += 0.5;
+    drunkity += 0.45;
   } else if (level === 3) {
-    drunkity += 0.75;
+    drunkity += 0.6;
   } else if (level === 4) {
-    drunkity += 1;
+    drunkity += 0.75;
+  } else if (level === 5) {
+    drunkity += 0.9;
   }
 
   if (drunkity >= 100) {
