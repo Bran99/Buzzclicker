@@ -32,6 +32,9 @@ app.controller('buzzClickerController', ["$http", "$scope", function($http, $sco
          })
   }
 
+  ///////////////////////////////////////////
+  ///// UPGRADE EFFECTIVENESS OF CLICKS /////
+  ///////////////////////////////////////////
   this.levelup = function (level) {
     controller.level += level;
     $('.upgrade-' + controller.level).css('display', 'none');
