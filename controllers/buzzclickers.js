@@ -14,4 +14,8 @@ router.post('/tick', function (req, res) {
   res.json({ drunkity : drunkity });
 });
 
+router.post('/drink', function (req, res) {
+  console.log(req.body);
+})
+
 module.exports = router;
