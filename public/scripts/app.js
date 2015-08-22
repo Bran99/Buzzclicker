@@ -30,20 +30,11 @@ app.controller('buzzClickerController', ["$http", "$scope", function($http, $sco
            controller.barWidth = data.drunkity + '%';
            controller.upgrades = data.drunkity;
          })
-
-    // if (controller.upgrades >= 70 || controller.beers >= 25) {
-    //   $('.upgrade-5').css('display', 'block')
-    // } else if (controller.upgrades >= 50 || controller.beers >= 20) {
-    //   $('.upgrade-4').css('display', 'block')
-    // } else if (controller.upgrades >= 30 || controller.beers >= 15) {
-    //   $('.upgrade-3').css('display', 'block')
-    // } else if (controller.upgrades >= 15 || controller.beers >= 10) {
-    //   $('.upgrade-2').css('display', 'block')
-    // } else if (controller.upgrades >= 5 || controller.beers >= 5) {
-    //   $('.upgrade-1').css('display', 'block')
-    // }
   }
 
+  ///////////////////////////////////////////
+  ///// UPGRADE EFFECTIVENESS OF CLICKS /////
+  ///////////////////////////////////////////
   this.levelup = function (level) {
     controller.level += level;
     $('.upgrade-' + controller.level).css('display', 'none');
