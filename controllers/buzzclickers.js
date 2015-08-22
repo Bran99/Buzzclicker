@@ -43,7 +43,7 @@ router.post('/drink', function (req, res) {
     drunkity += 0.9;
   }
 
-  if (drunkity >= 100) {
+  if (drunkity > 100) {
     drunkity = 100;
   }
 

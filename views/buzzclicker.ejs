@@ -9,25 +9,20 @@
         </div>
       </div>
       <div class="bot-ui">
-        
+
         <!-- beer buttons buff lite -->
         <div class="upgrade-frame">
           <div class="upgrade-button">
             <div class="row reset-space">
               <div class="col-xs-7 reset-space">
-                <h3 class="button-text"> 
-                  Buff lite 
+                <h3 class="button-text">
+                  Buff lite
                 </h3>
               </div>
               <div class="col-xs-2 reset-space">
                 <div class="beer-icon">
                   <img class="beer-img" src="/assets/buff_lite.png">
                 </div>
-              </div>
-              <div class="col-xs-3 beer-hit-button reset-space">                             
-                  <button type="button" class="btn btn-warning">
-                    Upgrade
-                  </button>
               </div>
             </div>
           </div>
@@ -37,7 +32,7 @@
           <div class="upgrade-button">
             <div class="row reset-space">
               <div class="col-xs-7 reset-space">
-                <h3 class="button-text"> 
+                <h3 class="button-text">
                   Buff
                 </h3>
               </div>
@@ -46,8 +41,8 @@
                   <img class="beer-img" src="/assets/buff.png">
                 </div>
               </div>
-              <div class="col-xs-3 beer-hit-button reset-space">                             
-                  <button type="button" class="btn btn-warning">
+              <div class="col-xs-3 beer-hit-button reset-space">
+                  <button type="button" class="btn btn-warning" ng-submit="bc.level += 1">
                     Upgrade
                   </button>
               </div>
@@ -59,7 +54,7 @@
           <div class="upgrade-button">
             <div class="row reset-space">
               <div class="col-xs-7 reset-space">
-                <h3 class="button-text"> 
+                <h3 class="button-text">
                   Buff Extra
                 </h3>
               </div>
@@ -68,7 +63,7 @@
                   <img class="beer-img" src="/assets/buff_extra.png">
                 </div>
               </div>
-              <div class="col-xs-3 beer-hit-button reset-space">                             
+              <div class="col-xs-3 beer-hit-button reset-space">
                   <button type="button" class="btn btn-warning">
                     Upgrade
                   </button>
@@ -81,7 +76,7 @@
           <div class="upgrade-button">
             <div class="row reset-space">
               <div class="col-xs-7 reset-space">
-                <h3 class="button-text"> 
+                <h3 class="button-text">
                   Buff Heavy
                 </h3>
               </div>
@@ -90,7 +85,7 @@
                   <img class="beer-img" src="/assets/buff_heavy.png">
                 </div>
               </div>
-              <div class="col-xs-3 beer-hit-button reset-space">                             
+              <div class="col-xs-3 beer-hit-button reset-space">
                   <button type="button" class="btn btn-warning">
                     Upgrade
                   </button>
@@ -103,7 +98,7 @@
           <div class="upgrade-button">
             <div class="row reset-space">
               <div class="col-xs-7 reset-space">
-                <h3 class="button-text"> 
+                <h3 class="button-text">
                   Buff Diesel
                 </h3>
               </div>
@@ -112,7 +107,7 @@
                   <img class="beer-img" src="/assets/buff_diesel.png">
                 </div>
               </div>
-              <div class="col-xs-3 beer-hit-button reset-space">                             
+              <div class="col-xs-3 beer-hit-button reset-space">
                   <button type="button" class="btn btn-warning">
                     Upgrade
                   </button>
@@ -125,7 +120,7 @@
           <div class="upgrade-button">
             <div class="row reset-space">
               <div class="col-xs-7 reset-space">
-                <h3 class="button-text"> 
+                <h3 class="button-text">
                   Buff HOLY S***
                 </h3>
               </div>
@@ -134,7 +129,7 @@
                   <img class="beer-img" src="/assets/buff_holy.png">
                 </div>
               </div>
-              <div class="col-xs-3 beer-hit-button reset-space">                             
+              <div class="col-xs-3 beer-hit-button reset-space">
                   <button type="button" class="btn btn-warning">
                     Upgrade
                   </button>
@@ -179,7 +174,7 @@
       	<path fill="#493920" d="M267.243,410h-24.324c0,0-0.45-10.659,4.955-16.065c5.405-5.405,14.415-8.933,14.415-8.933
       		s10.811,8.145,16.216,8.145s10.81-0.132,12.612,3.473c1.802,3.604,7.208,13.381,7.208,13.381H267.243z"/>
       </g>
-      <g id="Layer_2" ng-click="bc.drink(bc.level)">
+      <g id="carl" ng-click="bc.drink()">
       	<path fill="#CEB797" stroke="#000000" stroke-miterlimit="10" d="M463.25,267.75c0,0-28,1.25-39.5,2.75
       		c-8.177,1.066-29.25,7.75-27.5,16.25s4.75,11.5,9.25,11.5s18,1.25,20,0.75S441,273.5,463.25,267.75z"/>
       	<ellipse fill="#CEB797" stroke="#000000" stroke-miterlimit="10" cx="501.661" cy="238.643" rx="42.241" ry="33.376"/>
