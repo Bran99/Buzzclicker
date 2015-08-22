@@ -20,6 +20,7 @@ app.controller('buzzClickerController', ["$http", "$scope", function($http, $sco
          .success(function (data) {
            controller.barWidth = data.drunkity + '%';
            controller.upgrades = data.drunkity;
+          document.getElementById("blur").setAttribute("stdDeviation", data.drunkity/30);
          })
   }, 1000);
 
@@ -32,7 +33,6 @@ app.controller('buzzClickerController', ["$http", "$scope", function($http, $sco
          .success(function (data) {
            controller.barWidth = data.drunkity + '%';
            controller.upgrades = data.drunkity;
-           document.getElementById("blur").setAttribute("stdDeviation", data.drunkity/30);
          });
   };
 
@@ -53,9 +53,9 @@ app.controller('buzzClickerController', ["$http", "$scope", function($http, $sco
   this.increaseBelly = function () {
     console.log('current belly level at ' + controller.bellyLevel);
     $('.upgrade-belly-' + controller.bellyLevel).css('display', 'none');
+    $('.upgrade-belly-' + (controller.bellyLevel + 1)).css('display', 'block');
     controller.bellyLevel++;
     console.log("increase belly level to " + controller.bellyLevel);
-    $('.upgrade-belly' + (controller.bellyLevel + 1)).css('display', 'block');
   };
 
 }]);
