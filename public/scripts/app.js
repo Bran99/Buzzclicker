@@ -12,18 +12,19 @@ app.controller('buzzClickerController', ["$http", "$scope", function($http, $sco
   var interval = setInterval(function () {
     $http.post('/tick')
          .success(function (data) {
-           controller.barWidth = data.drunkity;
+           controller.barWidth = data.drunkity + '%';
            console.log(data);
          })
-  }, 2000);
+  }, 1000);
 
   ///////////////////////////////////////////
   // TICK DRUNK METER UP WHEN BEER CLICKED //
   ///////////////////////////////////////////
   this.drink = function(level) {
-    $('.arm').toggleClass('')
+    // $('.arm').toggleClass('')
     $http.post('/drink', { level : level })
          .success(function (data) {
+           controller.barWidth = data.drunkity + '%';
            console.log(data);
          })
   }
