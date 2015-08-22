@@ -41,6 +41,10 @@ router.post('/drink', function (req, res) {
     drunkity += 1;
   }
 
+  if (drunkity >= 100) {
+    drunkity = 100;
+  }
+
   res.json({ drunkity : drunkity })
 })
 
