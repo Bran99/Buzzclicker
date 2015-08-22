@@ -25,4 +25,9 @@
 	width: 0%;
 }
 
-
+#bar{
+	width: 100%;
+	background-color: red;
+	height: 50px;
+	margin-left: 5px;
+}
