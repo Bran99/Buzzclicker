@@ -24,9 +24,12 @@
 	margin: 8px;
 }
 #bar{
-	width: 56%;
+	width: 0%;
 	background-color: red;
 	height: 50px;
+	margin-left: 5px;
+	transition: width 0.2s ease;
+	border-radius: 2px;
 }
 .upgrade-frame{
 	padding: 5px;
