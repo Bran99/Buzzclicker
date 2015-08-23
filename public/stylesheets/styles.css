@@ -195,14 +195,34 @@ html {
   }
 }
 
+#belly {
+	transform-origin: 50% 50%;
+	transition: all .25s ease-in-out;
+}
+
+.increaseBelly2 {
+	transform: scale(1.02);
+}
+
+.increaseBelly3 {
+	transform: scale(1.04);
+}
+
+.increaseBelly4 {
+	transform: scale(1.06);
+}
+
+.increaseBelly5 {
+	transform: scale(1.08);
+}
+
 #belly:hover{
   -webkit-animation: inflate 1s ease;
   -webkit-animation-iteration-count: infinite;
-  /*transition: all 0.3s ease;*/
   transform-origin: 50% 50%;
 }
 
-@-webkit-keyframes inflate{
+@-webkit-keyframes inflate {
   0% {
     -webkit-transform: scale(1);
   }
@@ -218,4 +238,84 @@ html {
   100% {
     -webkit-transform: scale(1);
   }
+}
+
+@-webkit-keyframes inflate2 {
+  0% {
+    -webkit-transform: scale(1.02);
+  }
+  25% {
+    -webkit-transform: scale(1.02);
+  }
+  50% {
+    -webkit-transform: scale(1.02);
+  }
+  75% {
+    -webkit-transform: scale(1.04);
+  }
+  100% {
+    -webkit-transform: scale(1.02);
+  }
+}
+
+@-webkit-keyframes inflate3 {
+  0% {
+    -webkit-transform: scale(1.04);
+  }
+  25% {
+    -webkit-transform: scale(1.04);
+  }
+  50% {
+    -webkit-transform: scale(1.04);
+  }
+  75% {
+    -webkit-transform: scale(1.06);
+  }
+  100% {
+    -webkit-transform: scale(1.04);
+  }
+}
+
+@-webkit-keyframes inflate4 {
+  0% {
+    -webkit-transform: scale(1.06);
+  }
+  25% {
+    -webkit-transform: scale(1.06);
+  }
+  50% {
+    -webkit-transform: scale(1.06);
+  }
+  75% {
+    -webkit-transform: scale(1.08);
+  }
+  100% {
+    -webkit-transform: scale(1.06);
+  }
+}
+
+@-webkit-keyframes inflate5 {
+  0% {
+    -webkit-transform: scale(1.08);
+  }
+  25% {
+    -webkit-transform: scale(1.08);
+  }
+  50% {
+    -webkit-transform: scale(1.08);
+  }
+  75% {
+    -webkit-transform: scale(1.10);
+  }
+  100% {
+    -webkit-transform: scale(1.08);
+  }
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }

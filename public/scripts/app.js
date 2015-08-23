@@ -11,15 +11,14 @@ app.controller('buzzClickerController', ["$http", "$scope", function($http, $sco
 
   var controller = this;
 
-var buffExtra = new Audio("./assets/buffextra2.wav"),
-buffHeavy = new Audio("./assets/buffheavy.wav"),
-buffDiesel = new Audio("./assets/diesel.wav"),
-buffHolyS = new Audio("./assets/holys.wav");
+  var buffExtra  = new Audio("./assets/buffextra2.wav"),
+      buffHeavy  = new Audio("./assets/buffheavy.wav"),
+      buffDiesel = new Audio("./assets/diesel.wav"),
+      buffHolyS  = new Audio("./assets/holys.wav");
 
-
-var buffSounds = [];
-buffSounds.push(buffExtra, buffHeavy, buffDiesel, buffHolyS);
-var levelCounter = 0;
+  var buffSounds = [];
+  buffSounds.push(buffExtra, buffHeavy, buffDiesel, buffHolyS);
+  var levelCounter = 0;
 
   ///////////////////////////////////////////
   //// TICK DRUNK METER DOWN EVERY SECOND ///
@@ -67,15 +66,31 @@ var levelCounter = 0;
   //// UPGRADE DECREMENT AMOUNT (BELLY) /////
   ///////////////////////////////////////////
   this.increaseBelly = function () {
-    console.log('current belly level at ' + controller.bellyLevel);
     $('.upgrade-belly-' + controller.bellyLevel).css('display', 'none');
-    $('.upgrade-belly-' + (controller.bellyLevel + 1)).css('display', 'block');
+
     controller.bellyLevel++;
-    console.log("increase belly level to " + controller.bellyLevel);
+
+    $('.upgrade-belly-' + controller.bellyLevel).css('display', 'block');
+
+    if ($('#belly').hasClass("increaseBelly" + (controller.bellyLevel - 1))) {
+      document.getElementById("belly").setAttribute("class", "");
+    };
+
+    document.getElementById("belly").setAttribute("class", "increaseBelly" + controller.bellyLevel);
+
+    $('#belly').hover( function() {
+      $(this).css(
+        "-webkit-animation-name", "inflate" + controller.bellyLevel,
+        "-moz-animation-name", "inflate" + controller.bellyLevel
+    )});
+
   };
 
 }]);
 
+///////////////////////////////////////////
+//////// JQUERY ON CLICK FUNCTIONS ////////
+///////////////////////////////////////////
 
 $(document).ready(function() {
   var olmp1 = new Audio("./assets/olmp1.wav"),
