@@ -25,7 +25,8 @@ app.controller('buzzClickerController', ["$http", "$scope", function($http, $sco
   ///////////////////////////////////////////
   var interval = setInterval(function () {
     $http.post('/tick', { level      : controller.level,
-                          bellyLevel : controller.bellyLevel })
+                          bellyLevel : controller.bellyLevel
+                        })
          .success(function (data) {
            controller.barWidth = data.drunkity + '%';
            controller.upgrades = data.drunkity;
@@ -58,7 +59,7 @@ app.controller('buzzClickerController', ["$http", "$scope", function($http, $sco
 
     if (controller.level > levelCounter) {
       levelCounter += 1;
-      buffSounds[levelCounter-1].play();
+      buffSounds[levelCounter - 1].play();
     }
   }
 
@@ -78,7 +79,7 @@ app.controller('buzzClickerController', ["$http", "$scope", function($http, $sco
 
     document.getElementById("belly").setAttribute("class", "increaseBelly" + controller.bellyLevel);
 
-    $('#belly').hover( function() {
+    $('#belly').hover(function() {
       $(this).css(
         "-webkit-animation-name", "inflate" + controller.bellyLevel,
         "-moz-animation-name", "inflate" + controller.bellyLevel
@@ -92,7 +93,7 @@ app.controller('buzzClickerController', ["$http", "$scope", function($http, $sco
 //////// JQUERY ON CLICK FUNCTIONS ////////
 ///////////////////////////////////////////
 
-$(document).ready(function() {
+$(document).ready(function () {
   var olmp1 = new Audio("./assets/olmp1.wav"),
       olmp2 = new Audio("./assets/olmp2.wav"),
       olmp3 = new Audio("./assets/olmp3.wav"),
@@ -101,7 +102,7 @@ $(document).ready(function() {
   var carlSounds = [];
   carlSounds.push(olmp1, olmp2, olmp3, olmp4);
 
-  $('#carl').click(function(){
+  $('#carl').click(function () {
     $('#arm').css({
       "-webkit-animation-name":"moveArm",
       "-moz-animation-name":"moveArm"
@@ -119,10 +120,10 @@ $(document).ready(function() {
       "display": "visible"
     });
 
-    carlSounds[Math.floor(Math.random()*4)].play();
+    carlSounds[Math.floor(Math.random() * 4)].play();
 	});
 
-  $('#arm').bind('oanimationend animationend webkitAnimationEnd', function() {
+  $('#arm').bind('oanimationend animationend webkitAnimationEnd', function () {
     $('#arm').css({
      '-moz-animation-name': 'armReset',
      '-webkit-animation-name': 'armReset',
