@@ -379,61 +379,6 @@
 </g>
 </svg>
 
-<script>
-$(document).ready(function() {
-
-  var burp = new Audio("./assets/burp.wav"),
-      olmp1 = new Audio("./assets/olmp1.wav"),
-      olmp2 = new Audio("./assets/olmp2.wav"),
-      olmp3 = new Audio("./assets/olmp3.wav"),
-      olmp4 = new Audio("./assets/olmp4.wav");
-
-  var carlSounds = [];
-  carlSounds.push(burp, olmp1, olmp2, olmp3, olmp4);
-
-
-  $('#carl').click(function(){
-    $('#arm').css({
-      "-webkit-animation-name":"moveArm",
-      "-moz-animation-name":"moveArm"
-    });
-    $('#Eyes_Normal').attr({
-      "display": "none"
-    });
-    $('#Eyes_Crossed').attr({
-      "display": "visible"
-    });
-    $('#Mouth_Normal').attr({
-      "display": "none"
-    });
-    $('#Mouth_Open').attr({
-      "display": "visible"
-    });
-
-    carlSounds[Math.floor(Math.random()*5)].play();
-	});
-
-  $('#arm').bind('oanimationend animationend webkitAnimationEnd', function() {
-    $('#arm').css({
-     '-moz-animation-name': 'armReset',
-     '-webkit-animation-name': 'armReset',
-    });
-    $('#Eyes_Normal').attr({
-      "display": "visible"
-    });
-    $('#Eyes_Crossed').attr({
-      "display": "none"
-    });
-    $('#Mouth_Normal').attr({
-      "display": "visible"
-    });
-    $('#Mouth_Open').attr({
-      "display": "none"
-    });
-  });
-});
-</script>
-
     </div>
   </div>
 </div>

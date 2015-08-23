@@ -11,15 +11,14 @@ app.controller('buzzClickerController', ["$http", "$scope", function($http, $sco
 
   var controller = this;
 
-var buff = new Audio("./assets/buff2.wav"),
-buffExtra = new Audio("./assets/buffextra2.wav"),
+var buffExtra = new Audio("./assets/buffextra2.wav"),
 buffHeavy = new Audio("./assets/buffheavy.wav"),
 buffDiesel = new Audio("./assets/diesel.wav"),
 buffHolyS = new Audio("./assets/holys.wav");
 
 
 var buffSounds = [];
-buffSounds.push(buff, buffExtra, buffHeavy, buffDiesel, buffHolyS);
+buffSounds.push(buffExtra, buffHeavy, buffDiesel, buffHolyS);
 var levelCounter = 0;
 
   ///////////////////////////////////////////
@@ -32,11 +31,6 @@ var levelCounter = 0;
            controller.barWidth = data.drunkity + '%';
            controller.upgrades = data.drunkity;
           document.getElementById("blur").setAttribute("stdDeviation", data.drunkity/30);
-
-          if (controller.level > levelCounter) {
-            levelCounter += 1;
-            buffSounds[levelCounter-1].play();
-          }
 
          })
   }, 1000);
@@ -62,6 +56,11 @@ var levelCounter = 0;
     controller.level += level;
     $('.upgrade-' + controller.level).css('display', 'none');
     $('.upgrade-' + (level + 1)).css('display', 'block');
+
+    if (controller.level > levelCounter) {
+      levelCounter += 1;
+      buffSounds[levelCounter-1].play();
+    }
   }
 
   ///////////////////////////////////////////
@@ -76,3 +75,54 @@ var levelCounter = 0;
   };
 
 }]);
+
+
+$(document).ready(function() {
+  var olmp1 = new Audio("./assets/olmp1.wav"),
+      olmp2 = new Audio("./assets/olmp2.wav"),
+      olmp3 = new Audio("./assets/olmp3.wav"),
+      olmp4 = new Audio("./assets/olmp4.wav");
+
+  var carlSounds = [];
+  carlSounds.push(olmp1, olmp2, olmp3, olmp4);
+
+  $('#carl').click(function(){
+    $('#arm').css({
+      "-webkit-animation-name":"moveArm",
+      "-moz-animation-name":"moveArm"
+    });
+    $('#Eyes_Normal').attr({
+      "display": "none"
+    });
+    $('#Eyes_Crossed').attr({
+      "display": "visible"
+    });
+    $('#Mouth_Normal').attr({
+      "display": "none"
+    });
+    $('#Mouth_Open').attr({
+      "display": "visible"
+    });
+
+    carlSounds[Math.floor(Math.random()*4)].play();
+	});
+
+  $('#arm').bind('oanimationend animationend webkitAnimationEnd', function() {
+    $('#arm').css({
+     '-moz-animation-name': 'armReset',
+     '-webkit-animation-name': 'armReset',
+    });
+    $('#Eyes_Normal').attr({
+      "display": "visible"
+    });
+    $('#Eyes_Crossed').attr({
+      "display": "none"
+    });
+    $('#Mouth_Normal').attr({
+      "display": "visible"
+    });
+    $('#Mouth_Open').attr({
+      "display": "none"
+    });
+  });
+});
