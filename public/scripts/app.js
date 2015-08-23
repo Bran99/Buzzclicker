@@ -11,15 +11,14 @@ app.controller('buzzClickerController', ["$http", "$scope", function($http, $sco
 
   var controller = this;
 
-var buff = new Audio("./assets/buff2.wav"),
-buffExtra = new Audio("./assets/buffextra2.wav"),
-buffHeavy = new Audio("./assets/buffheavy.wav"),
-buffDiesel = new Audio("./assets/diesel.wav"),
-buffHolyS = new Audio("./assets/holys.wav");
+var buffExtra  = new Audio("./assets/buffextra2.wav"),
+    buffHeavy  = new Audio("./assets/buffheavy.wav"),
+    buffDiesel = new Audio("./assets/diesel.wav"),
+    buffHolyS  = new Audio("./assets/holys.wav");
 
 
 var buffSounds = [];
-buffSounds.push(buff, buffExtra, buffHeavy, buffDiesel, buffHolyS);
+buffSounds.push(buffExtra, buffHeavy, buffDiesel, buffHolyS);
 var levelCounter = 0;
 
   ///////////////////////////////////////////
@@ -68,11 +67,62 @@ var levelCounter = 0;
   //// UPGRADE DECREMENT AMOUNT (BELLY) /////
   ///////////////////////////////////////////
   this.increaseBelly = function () {
-    console.log('current belly level at ' + controller.bellyLevel);
     $('.upgrade-belly-' + controller.bellyLevel).css('display', 'none');
     $('.upgrade-belly-' + (controller.bellyLevel + 1)).css('display', 'block');
     controller.bellyLevel++;
-    console.log("increase belly level to " + controller.bellyLevel);
   };
 
 }]);
+
+$(document).ready(function() {
+
+  var burp = new Audio("./assets/burp.wav"),
+      olmp1 = new Audio("./assets/olmp1.wav"),
+      olmp2 = new Audio("./assets/olmp2.wav"),
+      olmp3 = new Audio("./assets/olmp3.wav"),
+      olmp4 = new Audio("./assets/olmp4.wav");
+
+  var carlSounds = [];
+  carlSounds.push(olmp1, olmp2, olmp3, olmp4);
+
+
+  $('#carl').click(function(){
+    $('#arm').css({
+      "-webkit-animation-name":"moveArm",
+      "-moz-animation-name":"moveArm"
+    });
+    $('#Eyes_Normal').attr({
+      "display": "none"
+    });
+    $('#Eyes_Crossed').attr({
+      "display": "visible"
+    });
+    $('#Mouth_Normal').attr({
+      "display": "none"
+    });
+    $('#Mouth_Open').attr({
+      "display": "visible"
+    });
+
+    carlSounds[Math.floor(Math.random()*4)].play();
+	});
+
+  $('#arm').bind('oanimationend animationend webkitAnimationEnd', function() {
+    $('#arm').css({
+     '-moz-animation-name': 'armReset',
+     '-webkit-animation-name': 'armReset',
+    });
+    $('#Eyes_Normal').attr({
+      "display": "visible"
+    });
+    $('#Eyes_Crossed').attr({
+      "display": "none"
+    });
+    $('#Mouth_Normal').attr({
+      "display": "visible"
+    });
+    $('#Mouth_Open').attr({
+      "display": "none"
+    });
+  });
+});
