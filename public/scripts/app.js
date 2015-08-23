@@ -11,6 +11,17 @@ app.controller('buzzClickerController', ["$http", "$scope", function($http, $sco
 
   var controller = this;
 
+var buff = new Audio("./assets/buff2.wav"),
+buffExtra = new Audio("./assets/buffextra2.wav"),
+buffHeavy = new Audio("./assets/buffheavy.wav"),
+buffDiesel = new Audio("./assets/diesel.wav"),
+buffHolyS = new Audio("./assets/holys.wav");
+
+
+var buffSounds = [];
+buffSounds.push(buff, buffExtra, buffHeavy, buffDiesel, buffHolyS);
+var levelCounter = 0;
+
   ///////////////////////////////////////////
   //// TICK DRUNK METER DOWN EVERY SECOND ///
   ///////////////////////////////////////////
@@ -21,6 +32,12 @@ app.controller('buzzClickerController', ["$http", "$scope", function($http, $sco
            controller.barWidth = data.drunkity + '%';
            controller.upgrades = data.drunkity;
           document.getElementById("blur").setAttribute("stdDeviation", data.drunkity/30);
+
+          if (controller.level > levelCounter) {
+            levelCounter += 1;
+            buffSounds[levelCounter-1].play();
+          }
+
          })
   }, 1000);
 
