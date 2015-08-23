@@ -11,15 +11,14 @@ app.controller('buzzClickerController', ["$http", "$scope", function($http, $sco
 
   var controller = this;
 
-var buffExtra  = new Audio("./assets/buffextra2.wav"),
-    buffHeavy  = new Audio("./assets/buffheavy.wav"),
-    buffDiesel = new Audio("./assets/diesel.wav"),
-    buffHolyS  = new Audio("./assets/holys.wav");
+  var buffExtra  = new Audio("./assets/buffextra2.wav"),
+      buffHeavy  = new Audio("./assets/buffheavy.wav"),
+      buffDiesel = new Audio("./assets/diesel.wav"),
+      buffHolyS  = new Audio("./assets/holys.wav");
 
-
-var buffSounds = [];
-buffSounds.push(buffExtra, buffHeavy, buffDiesel, buffHolyS);
-var levelCounter = 0;
+  var buffSounds = [];
+  buffSounds.push(buffExtra, buffHeavy, buffDiesel, buffHolyS);
+  var levelCounter = 0;
 
   ///////////////////////////////////////////
   //// TICK DRUNK METER DOWN EVERY SECOND ///
@@ -31,11 +30,6 @@ var levelCounter = 0;
            controller.barWidth = data.drunkity + '%';
            controller.upgrades = data.drunkity;
           document.getElementById("blur").setAttribute("stdDeviation", data.drunkity/30);
-
-          if (controller.level > levelCounter) {
-            levelCounter += 1;
-            buffSounds[levelCounter-1].play();
-          }
 
          })
   }, 1000);
@@ -61,6 +55,11 @@ var levelCounter = 0;
     controller.level += level;
     $('.upgrade-' + controller.level).css('display', 'none');
     $('.upgrade-' + (level + 1)).css('display', 'block');
+
+    if (controller.level > levelCounter) {
+      levelCounter += 1;
+      buffSounds[levelCounter-1].play();
+    }
   }
 
   ///////////////////////////////////////////
@@ -68,23 +67,39 @@ var levelCounter = 0;
   ///////////////////////////////////////////
   this.increaseBelly = function () {
     $('.upgrade-belly-' + controller.bellyLevel).css('display', 'none');
-    $('.upgrade-belly-' + (controller.bellyLevel + 1)).css('display', 'block');
+
     controller.bellyLevel++;
+
+    $('.upgrade-belly-' + controller.bellyLevel).css('display', 'block');
+
+    if ($('#belly').hasClass("increaseBelly" + (controller.bellyLevel - 1))) {
+      document.getElementById("belly").setAttribute("class", "");
+    };
+
+    document.getElementById("belly").setAttribute("class", "increaseBelly" + controller.bellyLevel);
+
+    $('#belly').hover( function() {
+      $(this).css(
+        "-webkit-animation-name", "inflate" + controller.bellyLevel,
+        "-moz-animation-name", "inflate" + controller.bellyLevel
+    )});
+
   };
 
 }]);
 
-$(document).ready(function() {
+///////////////////////////////////////////
+//////// JQUERY ON CLICK FUNCTIONS ////////
+///////////////////////////////////////////
 
-  var burp = new Audio("./assets/burp.wav"),
-      olmp1 = new Audio("./assets/olmp1.wav"),
+$(document).ready(function() {
+  var olmp1 = new Audio("./assets/olmp1.wav"),
       olmp2 = new Audio("./assets/olmp2.wav"),
       olmp3 = new Audio("./assets/olmp3.wav"),
       olmp4 = new Audio("./assets/olmp4.wav");
 
   var carlSounds = [];
   carlSounds.push(olmp1, olmp2, olmp3, olmp4);
-
 
   $('#carl').click(function(){
     $('#arm').css({
